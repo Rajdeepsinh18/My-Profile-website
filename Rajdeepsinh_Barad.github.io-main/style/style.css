@@ -1,0 +1,290 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* Light Mode */
+:root {
+    --background-color: #ffffff;
+    --text-color: #333647;
+    --pink-color: #f87652;
+    --secondary-color: #555555;
+    --button-bg: #f87652;
+    --button-border: #f87652;
+    --button-hover-bg: #ffffff;
+    --button-hover-color: #000000;
+}
+
+/* Dark Mode */
+[data-theme="dark"] {
+    --background-color: #333647;
+    --text-color: #ffffff;
+    --pink-color: #f87652;
+    --secondary-color: #bbbbbb;
+    --button-bg: #f87652;
+    --button-border: #f87652;
+    --button-hover-bg: #ffffff;
+    --button-hover-color: #000000;
+}
+
+* {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--background-color) !important;
+    color: var(--text-color);
+}
+
+h1, h2, h3, h4, h5, h6, p, span, td, a {
+    cursor: pointer;
+}
+
+canvas.particles-js-canvas-el {
+    position: absolute;
+    height: 100% !important;
+    width: 100%;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: -10000;
+    margin: 0;
+}
+
+/* Hero Section */
+.hero_section {
+    background-image: url('6530.jpg'); /* Adjust the path as necessary */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    color: white;
+    padding: 20px;
+}
+
+/* Row Styling */
+.hero_section .row {
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Text Styling */
+.hero_section .row h1, h2, h3, p {
+    color: var(--text-color);
+}
+
+.hero_section .row h3 {
+    font-size: 19px;
+    font-weight: 300;
+    margin-bottom: 15px;
+    position: relative;
+    animation: slideInLeft 0.8s ease-out;
+}
+
+.hero_section .row h3::after {
+    content: '';
+    position: absolute;
+    top: 10px;
+    width: 90px;
+    height: 2px;
+    background-color: var(--text-color);
+    margin-left: 6px;
+}
+
+.hero_section .row h1 {
+    font-size: 65px;
+    font-weight: 800;
+    animation: zoomIn 1s ease-in-out;
+}
+
+.hero_section .row h2 {
+    font-size: 20px;
+    font-weight: 100;
+    margin: 8px 0;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.hero_section .row p {
+    font-size: 13px;
+    margin-top: 13px;
+    line-height: 21px;
+    color: var(--secondary-color);
+    animation: fadeInUp 2s ease-in-out;
+}
+
+/* Button Styling */
+.hero_section .row button {
+    border-radius: 10px;
+    font-size: 19px;
+    color: white;
+    background-color: var(--button-bg);
+    border: 3px solid var(--button-border);
+    width: 113px;
+    margin-top: 10px;
+    transition: all 0.3s ease;
+}
+
+.hero_section .row button:hover {
+    background: var(--button-hover-bg);
+    color: var(--button-hover-color);
+    border-color: var(--button-hover-bg);
+}
+
+/* Image Styling */
+.hero_section .row img {
+    width: 80%;
+    border-radius: 50%;
+    animation: bounceIn 1.5s ease;
+}
+
+/* Keyframes for Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes slideInLeft {
+    from { transform: translateX(-100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes zoomIn {
+    from { transform: scale(0.5); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+@keyframes bounceIn {
+    from, 20%, 40%, 60%, 80%, to {
+        animation-timing-function: cubic-bezier(.215,.61,.355,1);
+    }
+    0% {
+        opacity: 0;
+        transform: scale3d(.3, .3, .3);
+    }
+    20% {
+        transform: scale3d(1.1, 1.1, 1.1);
+    }
+    40% {
+        transform: scale3d(.9, .9, .9);
+    }
+    60% {
+        opacity: 1;
+        transform: scale3d(1.03, 1.03, 1.03);
+    }
+    80% {
+        transform: scale3d(.97, .97, .97);
+    }
+    to {
+        opacity: 1;
+        transform: scale3d(1, 1, 1);
+    }
+}
+
+/* Media Queries */
+
+/* Large devices (desktops, 992px and up) */
+@media (max-width: 1200px) and (min-width: 993px) {
+    .hero_section .row h1 {
+        font-size: 58px;
+    }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (max-width: 993px) and (min-width: 763px) {
+    .hero_section .row h1 {
+        font-size: 42px;
+    }
+    .hero_section .row h2 {
+        font-size: 15px;
+    }
+    .hero_section .row p {
+        font-size: 11px;
+    }
+    .hero_section .row h3 {
+        font-size: 15px;
+    }
+    .hero_section .row button {
+        font-size: 15px;
+    }
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (max-width: 763px) and (min-width: 500px) {
+    .hero_section {
+        margin: 55px 0;
+    }
+    .hero_section .row h1 {
+        font-size: 46px;
+        text-align: center;
+    }
+    .hero_section .row h2 {
+        font-size: 15px;
+        text-align: center;
+    }
+    .hero_section .row p {
+        font-size: 11px;
+        text-align: center;
+    }
+    .hero_section .btn_container {
+        justify-content: center;
+        text-align: center;
+    }
+    .hero_section .row h3 {
+        font-size: 18px;
+        text-align: center;
+        margin-bottom: 0;
+    }
+    .hero_section .row h3::after {
+        width: 0;
+    }
+    .hero_section .btn_container button {
+        width: 100px;
+        height: 43px;
+        font-size: 15px;
+        text-align: center;
+    }
+    .hero_section img {
+        width: 60%;
+        margin-top: 20px;
+    }
+}
+
+/* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 500px) {
+    .hero_section {
+        padding: 20px 15px;
+    }
+    .hero_section .row {
+        flex-direction: column;
+        text-align: center;
+        height: auto;
+        padding: 20px 0;
+    }
+    .hero_section .row h1 {
+        font-size: 36px;
+    }
+    .hero_section .row h2 {
+        font-size: 14px;
+    }
+    .hero_section .row p {
+        font-size: 12px;
+        line-height: 18px;
+    }
+    .hero_section .btn_container {
+        text-align: center;
+        margin-top: 20px;
+    }
+    .hero_section img {
+        width: 70%;
+        margin-top: 20px;
+    }
+}
